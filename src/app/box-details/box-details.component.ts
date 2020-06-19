@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-box-details',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./box-details.component.scss']
 })
 export class BoxDetailsComponent implements OnInit {
+  @Input() word: string;
 
   constructor() { }
 
