@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FrameComponent } from './frame/frame.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { BoxDetailsComponent } from './box-details/box-details.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     FrameComponent,
-    HomeComponent
+    HomeComponent,
+    BoxDetailsComponent
   ],
   imports: [
     BrowserModule,
