@@ -9,6 +9,8 @@ export class FrameComponent implements OnInit {
 
   constructor() { }
 
+  words: string[] = ["one", "two", "suck a dick sam"]
+
   ngOnInit(): void {
   }
 
