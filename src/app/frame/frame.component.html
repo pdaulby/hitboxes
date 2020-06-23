@@ -1,10 +1,11 @@
 <p>Frame Editor</p>
-<img src="{{imageUrl}}" alt="frame-image">
 
-<p>image url: <input type="text" [(ngModel)]="imageUrl"></p>
+<canvas width="1000" height="1000"></canvas>
+
+<p>image url: <input type="text" [(ngModel)]="imageUrl" (ngModelChange)="getRedraw()()"></p>
 <ol>
     <li *ngFor="let box of boxes">
-      <app-box-details [box]="box"></app-box-details>
+      <app-box-details [box]="box" [redraw]="getRedraw()"></app-box-details>
     </li>
 </ol>
 

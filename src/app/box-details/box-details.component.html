@@ -1,7 +1,7 @@
 <div *ngIf="box">
-  Bottom: <input type="number" [(ngModel)]="box.square.bottom">
-  Left: <input type="number" [(ngModel)]="box.square.left">
-  Top: <input type="number" [(ngModel)]="box.square.top">
-  Right: <input type="number" [(ngModel)]="box.square.right">
+  Bottom: <input type="number" [(ngModel)]="box.square.bottom" (ngModelChange)="redraw()">
+  Left: <input type="number" [(ngModel)]="box.square.left" (ngModelChange)="redraw()">
+  Top: <input type="number" [(ngModel)]="box.square.top" (ngModelChange)="redraw()">
+  Right: <input type="number" [(ngModel)]="box.square.right" (ngModelChange)="redraw()">
   {{ stringify() }}
 </div>

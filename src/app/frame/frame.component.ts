@@ -16,7 +16,30 @@ export class FrameComponent implements OnInit {
     {square: {bottom: 20, left: 20, top: 90, right: 90 }}
   ]
 
+  getRedraw() {
+    var i = this.imageUrl;
+    var b = this.boxes;
+    return ()=>this.redraw(i, b);
+  }
+
+  redraw(imageUrl: string, boxes: Box[]) {
+    var canvas = document.querySelector("canvas");
+    var context = canvas.getContext("2d");
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    var img = new Image(); //Create a background image
+    img.src = imageUrl;
+    img.onload = function() {
+      context.drawImage(img, 0, 0);
+      boxes.forEach(box => {
+        context.beginPath();
+        context.rect(box.square.bottom, box.square.left, box.square.top, box.square.right);
+        context.stroke();
+      });
+    }
+  }
+
   ngOnInit(): void {
+    this.redraw(this.imageUrl, this.boxes);
   }
 
   addBox() {

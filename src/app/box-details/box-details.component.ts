@@ -8,6 +8,7 @@ import Box from 'src/types/box';
 })
 export class BoxDetailsComponent implements OnInit {
   @Input() box: Box;
+  @Input() redraw: () => void;
 
   constructor() { }
 
