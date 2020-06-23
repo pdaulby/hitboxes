@@ -1,5 +1,7 @@
-<p>frame works!</p>
-<img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg" alt="Italian Trulli">
+<p>Frame Editor</p>
+<img src="{{imageUrl}}" alt="frame-image">
+
+<p>image url: <input type="text" [(ngModel)]="imageUrl"></p>
 <ol>
     <li *ngFor="let box of boxes">
       <app-box-details [box]="box"></app-box-details>

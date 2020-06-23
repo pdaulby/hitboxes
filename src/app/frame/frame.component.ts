@@ -9,7 +9,8 @@ import Box from 'src/types/box';
 export class FrameComponent implements OnInit {
 
   constructor() { }
-
+  
+  imageUrl: string = "https://i.imgur.com/im8dAFe.jpeg";
   boxes: Box[] = [
     {square: {bottom: 10, left: 10, top: 80, right: 80 }},
     {square: {bottom: 20, left: 20, top: 90, right: 90 }}
