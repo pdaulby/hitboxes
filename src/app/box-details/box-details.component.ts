@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import Box from 'src/types/box';
 
 @Component({
   selector: 'app-box-details',
@@ -6,11 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./box-details.component.scss']
 })
 export class BoxDetailsComponent implements OnInit {
-  @Input() word: string;
+  @Input() box: Box;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  stringify(): string {
+    return JSON.stringify(this.box);
   }
 
 }
