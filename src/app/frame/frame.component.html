@@ -1,8 +1,10 @@
 <p>Frame Editor</p>
 
-<canvas width="1000" height="1000"></canvas>
+<div class="bg" [style.background-image]="'url(' + imageUrl + ')'" >  
+  <canvas height="600" width="600"></canvas>
+</div>
 
-<p>image url: <input type="text" [(ngModel)]="imageUrl" (ngModelChange)="getRedraw()()"></p>
+<p>image url: <input type="text" [(ngModel)]="imageUrl"></p>
 <ol>
     <li *ngFor="let box of boxes">
       <app-box-details [box]="box" [redraw]="getRedraw()"></app-box-details>
