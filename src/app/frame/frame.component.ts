@@ -30,7 +30,7 @@ export class FrameComponent implements OnInit {
     context.lineWidth = 2;
     this.boxTypes.forEach(definition=> {
       context.strokeStyle = definition.color;
-      boxes.boxMap.get(definition.name).forEach(box=>{
+      boxes[definition.name].forEach(box=>{
         context.beginPath();
         context.rect(box.square.bottom, box.square.left, box.square.top, box.square.right);
         context.stroke();
@@ -39,6 +39,7 @@ export class FrameComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    var x = {};
     this.boxes.add("hurtbox", {square: {bottom: 110, left: 110, top: 180, right: 180 }});
     this.boxes.add("hurtbox", {square: {bottom: 120, left: 120, top: 280, right: 280 }});
     this.boxes.add("hitbox", {square: {bottom: 150, left: 120, top: 280, right: 250 }});

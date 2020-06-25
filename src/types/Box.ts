@@ -14,16 +14,14 @@ export interface BoxDefinition {
 }
 
 export class Boxes {
-  boxMap: Map<string, Box[]>;
 
   constructor (definitions: BoxDefinition[]){
-    this.boxMap = new Map();
     definitions.map(d=>d.name).forEach(name=>{
-      this.boxMap.set(name, [])
+      this[name] = []
     });
   }
 
   add(name: string, box: Box){
-    this.boxMap.get(name).push(box);
+    this[name].push(box);
   }
 }
