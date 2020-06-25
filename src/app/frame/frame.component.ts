@@ -11,8 +11,8 @@ export class FrameComponent implements OnInit {
   constructor() { }
   
   boxTypes: BoxDefinition[] = [
-    {name: "hurtbox", color: "green", numbers: []},
-    {name: "hitbox", color: "red", numbers: ["damage"]},
+    {name: "hurtbox", color: "green"},
+    {name: "hitbox", color: "red", numbers: ["damage", "baseKnockback"]},
   ]
 
   imageUrl: string = "https://i.imgur.com/im8dAFe.jpeg";
@@ -41,13 +41,13 @@ export class FrameComponent implements OnInit {
   ngOnInit(): void {
     this.boxes.add("hurtbox", {square: {bottom: 110, left: 110, top: 180, right: 180 }});
     this.boxes.add("hurtbox", {square: {bottom: 120, left: 120, top: 280, right: 280 }});
-    this.boxes.add("hitbox", {square: {bottom: 150, left: 120, top: 280, right: 250 }});
+    this.boxes.add("hitbox", {square: {bottom: 150, left: 120, top: 280, right: 250 }, damage: 20});
     this.redraw(this.boxes);
   }
 
   addBox(name: string) {
     this.boxes.add(name, {square: {bottom: 10, left: 10, top: 10, right: 10 }})
-    this.redraw(this.boxes);
+    this.redraw(this.boxes);//TODO should probably not do this
   }
 
 

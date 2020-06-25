@@ -1,16 +1,17 @@
-export default interface Box {
+export default interface Box{
   square: {
     bottom: number,
     left: number,
     top: number,
     right: number
-  }
+  };
+  [x: string]: any 
 }
 
 export interface BoxDefinition {
   name: string;
   color: string;
-  numbers: string[];
+  numbers?: string[];
 }
 
 export class Boxes {

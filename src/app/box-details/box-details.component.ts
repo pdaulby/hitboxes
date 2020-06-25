@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import Box from 'src/types/box';
+import Box, { BoxDefinition } from 'src/types/box';
 
 @Component({
   selector: 'app-box-details',
@@ -8,6 +8,7 @@ import Box from 'src/types/box';
 })
 export class BoxDetailsComponent implements OnInit {
   @Input() box: Box;
+  @Input() boxType: BoxDefinition;
   @Input() redraw: () => void;
 
   constructor() { }

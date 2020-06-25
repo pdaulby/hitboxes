@@ -6,7 +6,7 @@
 <ol><li *ngFor="let boxType of boxTypes">
   {{boxType.name}}
   <ol><li *ngFor="let box of boxes[boxType.name]">
-    <app-box-details [box]="box" [redraw]="getRedraw()"></app-box-details>
+    <app-box-details [box]="box" [boxType]="boxType" [redraw]="getRedraw()"></app-box-details>
   </li></ol>
   <button (click)="addBox(boxType.name)">Add Box</button>
 </li></ol>
