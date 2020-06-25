@@ -14,8 +14,4 @@ export class BoxDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  stringify(): string {
-    return JSON.stringify(this.box);
-  }
-
 }

@@ -39,19 +39,19 @@ export class FrameComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    var x = {};
     this.boxes.add("hurtbox", {square: {bottom: 110, left: 110, top: 180, right: 180 }});
     this.boxes.add("hurtbox", {square: {bottom: 120, left: 120, top: 280, right: 280 }});
     this.boxes.add("hitbox", {square: {bottom: 150, left: 120, top: 280, right: 250 }});
     this.redraw(this.boxes);
   }
 
-  addBox() {
-    this.boxes.add("hitbox", {square: {bottom: 0, left: 0, top: 0, right: 0 }})
+  addBox(name: string) {
+    this.boxes.add(name, {square: {bottom: 10, left: 10, top: 10, right: 10 }})
+    this.redraw(this.boxes);
   }
 
 
   stringify() {
-    return JSON.stringify(this.boxes);
+    return JSON.stringify(this.boxes, null, 2);
   }
 }

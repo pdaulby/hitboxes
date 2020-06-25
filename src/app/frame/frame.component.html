@@ -3,12 +3,13 @@
 <canvas class="image-style" [style.background-image]="'url(' + imageUrl + ')'" height="600" width="600"></canvas>
 
 <p>image url: <input type="text" [(ngModel)]="imageUrl"></p>
-<ol>
-    <li *ngFor="let box of boxes['hitbox']">
-      <app-box-details [box]="box" [redraw]="getRedraw()"></app-box-details>
-    </li>
-</ol>
+<ol><li *ngFor="let boxType of boxTypes">
+  {{boxType.name}}
+  <ol><li *ngFor="let box of boxes[boxType.name]">
+    <app-box-details [box]="box" [redraw]="getRedraw()"></app-box-details>
+  </li></ol>
+  <button (click)="addBox(boxType.name)">Add Box</button>
+</li></ol>
 
-<button (click)="addBox()">Add Box</button>
-
-<p>{{stringify()}}</p>
+<p></p>
+<pre>{{stringify()}}</pre>
