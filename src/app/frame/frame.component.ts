@@ -30,7 +30,7 @@ export class FrameComponent implements OnInit {
     context.lineWidth = 2;
     this.boxTypes.forEach(definition=> {
       context.strokeStyle = definition.color;
-      boxes.boxes.get(definition.name).forEach(box=>{
+      boxes.boxMap.get(definition.name).forEach(box=>{
         context.beginPath();
         context.rect(box.square.bottom, box.square.left, box.square.top, box.square.right);
         context.stroke();

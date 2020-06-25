@@ -4,7 +4,7 @@
 
 <p>image url: <input type="text" [(ngModel)]="imageUrl"></p>
 <ol>
-    <li *ngFor="let box of boxes.boxes.get('hitbox')">
+    <li *ngFor="let box of boxes.boxMap.get('hitbox')">
       <app-box-details [box]="box" [redraw]="getRedraw()"></app-box-details>
     </li>
 </ol>
