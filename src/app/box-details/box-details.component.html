@@ -1,8 +1,8 @@
 <div *ngIf="box">
-  Bottom: <input type="number" [(ngModel)]="box.square.bottom" (ngModelChange)="redraw()">
   Left: <input type="number" [(ngModel)]="box.square.left" (ngModelChange)="redraw()">
-  Top: <input type="number" [(ngModel)]="box.square.top" (ngModelChange)="redraw()">
+  Bottom: <input type="number" [(ngModel)]="box.square.bottom" (ngModelChange)="redraw()">
   Right: <input type="number" [(ngModel)]="box.square.right" (ngModelChange)="redraw()">
+  Top: <input type="number" [(ngModel)]="box.square.top" (ngModelChange)="redraw()">
   <div *ngIf="boxType.numbers">
     <ol><li *ngFor="let numberName of boxType.numbers">
       {{ numberName }}: <input type="number" [(ngModel)]="box[numberName]">
