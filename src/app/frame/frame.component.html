@@ -2,7 +2,10 @@
 
 <canvas class="image-style" [style.background-image]="'url(' + imageUrl + ')'" height="600" width="600"></canvas>
 
-<p>image url: <input type="text" [(ngModel)]="imageUrl"></p>
+<p>Image URL: <input type="text" [(ngModel)]="imageUrl"> -  Anchor Point 
+  X: <input class="coord" type="number" [value]="anchor.x" (change)="updateAnchorX($event.target.value)">
+  Y: <input class="coord" type="number" [value]="anchor.y" (change)="updateAnchorY($event.target.value)">
+</p>
 <ol><li *ngFor="let boxType of boxTypes">
   {{boxType.name}}
   <ol><li *ngFor="let box of boxes[boxType.name]">

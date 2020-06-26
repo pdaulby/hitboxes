@@ -26,3 +26,13 @@ export class Boxes {
     this[name].push(box);
   }
 }
+
+export type BoxCallback =  (box: Box, definition: BoxDefinition) => any;
+
+export const forEachBox = (boxes: Boxes, boxTypes: BoxDefinition[], fn: BoxCallback) => {
+  boxTypes.forEach(definition => {
+    boxes[definition.name].forEach(box=> {
+      fn(box, definition);
+    })
+  });
+}
